@@ -1,0 +1,12 @@
+name: "website"
+title: "En Hua Hu"
+description: |
+  En Hua Hu
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Research"
+      href: research.html
+    - text: "Teaching"
+      href: teaching.html
+output: distill::distill_article

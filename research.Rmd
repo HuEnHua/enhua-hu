@@ -1,0 +1,15 @@
+---
+title: "Research"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Work in Progress
+Compound Reduction and Belief Updating 
+
+### Others
+[Two Stage Bootstrap Model Selection](static/files/Two_Step_Bootstrap_Model_Selection.pdf) 
+
+

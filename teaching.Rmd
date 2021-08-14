@@ -1,0 +1,40 @@
+---
+title: "Teaching"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### ECO326 Advanced Microeconomics
+Winter 2021  
+with Marcin Peski  
+at UofT  
+
+### ECO1200 Microecomics MFE
+Winter 2020/2021  
+with Anton Tsoy/Yosh Halberstam  
+at UofT  
+
+### ECO2020 Microeconomics PhD
+Fall 2020   
+with Marcin Peski  
+at UofT  
+
+### ECO316 Intro to Game Theory 
+Fall/Winter 2018/2019/2020  
+with Johannes Hoelzemann  
+at UofT  
+
+### EC201 Microeconomics
+Fall/Winter 2017/2018  
+with Erik Eyster and Margaret Bray  
+at LSE  
+
+### MAT133 Intro to Calculus
+Fall/winter 2015/2016  
+with Abe Igelfeld  
+at UofT  
+
+
+
