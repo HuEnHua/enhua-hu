@@ -1,6 +1,6 @@
 ---
 title: "En Hua Hu"
-image: <img src="profile.jpg" alt="image" width="1000"/>
+image: "profile.jpg"
 favicon: images/favicon.jpg
 # links:
 #   - label: '<i class="fab fa-github"></i> GitHub'
