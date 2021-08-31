@@ -7,7 +7,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ### Work in Progress
-Compound Reduction and Belief Updating 
+Compound Reduction and Bayesian Updating 
 
 ### Others
 [Two-Step Bootstrap Model Selection](static/files/Two_Step_Bootstrap_Model_Selection.pdf) (with Guangbin Hong)
