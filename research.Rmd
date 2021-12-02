@@ -7,12 +7,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ### Work in Progress
-<<<<<<< HEAD
-Compound Reduction and Bayesian Updating    
+Compound Reduction and Belief Updating    
 A Procedural Model of Lottery Complexity
-=======
-Compound Reduction and Bayesian Updating 
->>>>>>> a9bfc709f1a4a4043935d73af0b93d08577aa73c
 
 ### Others
 [Two-Step Bootstrap Model Selection](static/files/Two_Step_Bootstrap_Model_Selection.pdf) (with Guangbin Hong)
