@@ -2042,6 +2042,45 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
+  <style>
+        details {
+            background-color: #D3E5F4;
+        }
+
+        details summary {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        details p {
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+   
+    <style>
+        #JobMarketPaper { /* Corrected ID for CSS */
+            text-align: center;
+        }
+    </style>
+   
+    <style>
+        #WorkingPapers { /* Corrected ID for CSS */
+            text-align: center;
+        }
+    </style>
+   
+    <style>
+        #WorksinProgress { /* Corrected ID for CSS */
+            text-align: center;
+        }
+    </style>
+   
+    <style>
+        #Other { /* Corrected ID for CSS */
+            text-align: center;
+        }
+    </style>
 
 </head>
 
@@ -2081,49 +2120,52 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-article">
   
-<h3 id="Job Market Paper"> Job Market Paper</h3>
-<p><a href="static/files/CI.pdf">Confidence in Inference </a>   <font size="2">  
- <i> </i>
-</font>  
-            <details>
-<summary>Abstract</summary>
-<br>
-I study an agent who chooses between objects, each associated with a sample of signals,
-e.g., choosing a restaurant based on online reviews. I characterize the set of choices that are
-consistent with established models of belief updating. A simple thought experiment yields a
-natural choice pattern that lies outside this set. In a controlled experiment, 95% of subjects’
-choices violate models of belief updating. Using a novel incentive-compatible confidence
-elicitation mechanism, I find confidence in correctly interpreting samples influences choice.
-This channel is relevant in the thought experiment but is ruled out by models of belief updating.
-</details>
+  <h3 id="JobMarketPaper"> Job Market Paper</h3>
+    <p> <strong> <a href="static/files/CI.pdf" target="_blank" rel="noopener noreferrer">Confidence in Inference </a> </strong>
+      <font size="2">
+         <p>[<a href="static/files/CIShortSlides.pdf" target="_blank" rel="noopener noreferrer">Summary slides</a>]</p>
+      <details>
+        <summary>Abstract</summary>
+        <br>
+        I study an agent who chooses between objects, each associated with a sample of signals, e.g., choosing a restaurant based on online reviews. I characterize the set of choices that are consistent with established models of belief updating. A simple thought experiment yields a natural choice pattern that lies outside this set. In a controlled experiment, 95% of subjects’ choices violate models of belief updating. Using a novel incentive-compatible confidence elicitation mechanism, I find confidence in correctly interpreting samples influences choice. This channel is relevant in the thought experiment but is ruled out by models of belief updating.
+        </details>
+        </br>  
+        <p>Presented at: Behavioral and Experimental Economists of the Mid-Atlantic, ESA North American Meeting, European Winter Meeting of the Econometric Society (scheduled)</p>
+        </font> 
+    </p>
 
-<br>  
-</p>
-
-<h3 id="Working Papers"> Working Papers</h3>  
-<p><a href="static/files/PMCR.pdf">A Procedural Model of Complexity Under Risk </a>   <font size="2">  
- <i> (Presented at: BRIC, D-TEA, FUR) </i>
-</font>  
-            <details>
-<summary>Abstract</summary>
-<br>
-I consider a decision-maker who uses rules to simplify lotteries in order to compare them. I characterize expected utility in this setting and highlight its complexity requirements which a purely axiomatic characterization overlooks. I relax these requirements to characterize two models of complexity aversion : outcome support size cost and entropy cost models. I consider an additional aspect of complexity: decision-makers find it easier to evaluate a lottery when outcomes are close in value. To capture this, I characterize a third model of complexity aversion. Here the DM first partitions together outcomes which are close in value and then evaluates the lottery along with the complexity of the partition. This representation offers a measure of complexity which is not restricted to the probability and support size but also accounts for the cardinal values of the outcomes. I also compare empirically the models and find support for partition complexity.
-</details>
-
-<br>  
-</p>
+  <h3 id="WorkingPapers"> Working Papers</h3>
+    <p> <strong> <a href="static/files/PMCR.pdf" target="_blank" rel="noopener noreferrer">A Procedural Model of Complexity Under Risk</a>  </strong>
+      <font size="2">
+         <p>[<a href="static/files/PMCRSlides.pdf" target="_blank" rel="noopener noreferrer">Summary slides</a>]</p>
+      <details>
+        <summary>Abstract</summary>
+        <br>
+        I consider a decision-maker who uses rules to simplify lotteries in order to compare them. I characterize expected utility in this setting and highlight its complexity requirements which a purely axiomatic characterization overlooks. I relax these requirements to characterize two models of complexity aversion : outcome support size cost and entropy cost models. I consider an additional aspect of complexity: decision-makers find it easier to evaluate a lottery when outcomes are close in value. To capture this, I characterize a third model of complexity aversion. Here the DM first partitions together outcomes which are close in value and then evaluates the lottery along with the complexity of the partition. This representation offers a measure of complexity which is not restricted to the probability and support size but also accounts for the cardinal values of the outcomes. I also compare empirically the models and find support for partition complexity.
+        </details>
+        </br> 
+    <p>Presented at: Bounded Rationality in Choice, <a href="https://sites.google.com/site/dteaworkshop/previous-workshops/d-tea-2022" target="_blank" rel="noopener noreferrer">Decision: Theory, Experiments, and Application</a>, Foundations of Utility and Risk</p>
+        </font> 
+    </p>
    
-<h3 id="Works in Progress">Work in Progress</h3>
-<p>Updating Bias and Model Misspecification: Evidence from the Classroom (with Marc-Antoine Chatelain, Paul Han and Xiner Xu)</p>
-            <details>
-<summary>Abstract</summary>
-<br>
-Mainstream economic models assume agents are correctly specified regarding their environment and process information without bias. In many settings, the failure of these assumptions can have a significant impact on learning and choice. To understand these issues better, one must obtain data not only on the actual environment but also on agents' dynamic and potentially noisy perception of the environment. We investigate these issues via first-year students in large mathematics classes who receive test scores throughout the term as signals of their ability and return to effort. These test scores are highly informative, and past test scores correlate highly with future scores. We collect a high-frequency dataset by surveying students in an incentive-compatible manner before and after each test. The dataset is also novel in that we are the first to collect belief data regarding not only students' expected grade but also their belief in the noisiness of the test scores. We find that students overestimate the noisiness of tests by a factor of 2 and update in a biased manner. We conduct a randomized control trial where students are not given additional information but are told about the accuracy of tests. We find students can update their beliefs about the noisiness of the testing correctly, and this leads to improvement in their updated beliefs. This suggests a substantial amount of updating failure due to misperception can be corrected. </details>
-
-<br>  
-</p>
-<h3 id="others">Others</h3>
-<p><a href="static/files/2SBMS.pdf">Two-Step Bootstrap Model Selection</a> (with <a href="https://www.guangbinhong.com/">Guangbin Hong</a>) </p>
+  <h3 id="WorksinProgress">Work in Progress</h3>
+    <p> <strong> <a href="static/files/PMCR.pdf" target="_blank" rel="noopener noreferrer">Updating Bias and Model Misspecification: Evidence from the Classroom</a> </strong>
+    <p>with <a href="https://www.marcchatelain.com/" target="_blank" rel="noopener noreferrer">Marc-Antoine Chatelain</a>, <a href="https://sites.google.com/view/paul-han" target="_blank" rel="noopener noreferrer">Paul Han</a> and Xiner Xu</p>
+      <font size="2">
+      <details>
+        <summary>Abstract</summary>
+        <br>
+        Mainstream economic models assume agents are correctly specified regarding their environment and process information without bias. In many settings, the failure of these assumptions can have a significant impact on learning and choice. To understand these issues better, one must obtain data not only on the actual environment but also on agents' dynamic and potentially noisy perception of the environment. We investigate these issues via first-year students in large mathematics classes who receive test scores throughout the term as signals of their ability and return to effort. These test scores are highly informative, and past test scores correlate highly with future scores. We collect a high-frequency dataset by surveying students in an incentive-compatible manner before and after each test. The dataset is also novel in that we are the first to collect belief data regarding not only students' expected grade but also their belief in the noisiness of the test scores. We find that students overestimate the noisiness of tests by a factor of 2 and update in a biased manner. We conduct a randomized control trial where students are not given additional information but are told about the accuracy of tests. We find students can update their beliefs about the noisiness of the testing correctly, and this leads to improvement in their updated beliefs. This suggests a substantial amount of updating failure due to misperception can be corrected.
+        </details>
+        </br>  
+        </font> 
+    </p>
+  
+   <h3 id="Other">Other</h3>
+    <p><a href="static/files/2SBMS.pdf" target="_blank" rel="noopener noreferrer">Two-Step Bootstrap Model Selection</a>
+    <p>with <a href="https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.guangbinhong.com%2F&data=05%7C01%7Cenhua.hu%40mail.utoronto.ca%7C3c38c93ede3d446eed4e08dbda38ef4e%7C78aac2262f034b4d9037b46d56c55210%7C0%7C0%7C638343710284592932%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=0CIpzNCFCZU0kksmgqIY%2Blbqmx9fzzPWwEQNlpsXtaM%3D&reserved=0" target="_blank" rel="noopener noreferrer">Guangbin Hong</a></p>
+    </p>
+  
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
