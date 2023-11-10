@@ -2051,7 +2051,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
         details summary {
             padding: 5px;
             cursor: pointer;
-            display: none;
         }
 
         details p {
@@ -2059,6 +2058,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
             margin: 10px;
         }
 
+        summary::-webkit-details-marker {
+        display: none;
+        }
     </style>
    
     <style>
