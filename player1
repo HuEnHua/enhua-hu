@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Player 1</title>
+</head>
+<body>
+  <h1>Player 1 Page</h1>
+  <p id="status"></p>
+  <button id="logout">Logout</button>
+
+  <script>
+    const PLAYER_NUMBER = 1;
+
+    // Demo-only guard: must be logged in as player1
+    const player = sessionStorage.getItem("player");
+    if (player !== `player${PLAYER_NUMBER}`) {
+      window.location.href = "gamelogin.html";
+    } else {
+      document.getElementById("status").textContent = `Logged in as ${player}.`;
+    }
+
+    document.getElementById("logout").onclick = () => {
+      sessionStorage.clear();
+      window.location.href = "gamelogin.html";
+    };
+  </script>
+</body>
+</html>
