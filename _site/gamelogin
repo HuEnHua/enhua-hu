@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Login</title>
+  <style>
+    body { font-family: system-ui, Arial; display:flex; min-height:100vh; align-items:center; justify-content:center; }
+    .card { width: 340px; padding: 20px; border: 1px solid #ddd; border-radius: 12px; }
+    label { display:block; margin-top: 12px; font-size: 14px; }
+    input { width:100%; padding:10px; margin-top:6px; border:1px solid #ccc; border-radius: 10px; }
+    button { width:100%; padding:10px; margin-top:14px; border:0; border-radius: 10px; cursor:pointer; }
+    .err { color: #b00020; margin-top: 10px; min-height: 1.2em; font-size: 14px; }
+    code { background:#f5f5f5; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Game Login</h2>
+
+    <form id="loginForm" autocomplete="off">
+      <label>
+        Username
+        <input id="username" required />
+      </label>
+
+      <label>
+        Password
+        <input id="password" type="password" required />
+      </label>
+
+      <button type="submit">Enter</button>
+      <div id="error" class="err"></div>
+    </form>
+
+    <p style="font-size:12px;color:#666;margin-top:12px;">
+      Demo accounts: <code>player1/p1</code> … <code>player10/p10</code>
+    </p>
+  </div>
+
+  <script>
+    // Demo-only credentials table: username -> password + destination page
+    const PLAYERS = {
+      player1:  { password: "p1",  page: "player1.html"  },
+      player2:  { password: "p2",  page: "player2.html"  },
+      player3:  { password: "p3",  page: "player3.html"  },
+      player4:  { password: "p4",  page: "player4.html"  },
+      player5:  { password: "p5",  page: "player5.html"  },
+      player6:  { password: "p6",  page: "player6.html"  },
+      player7:  { password: "p7",  page: "player7.html"  },
+      player8:  { password: "p8",  page: "player8.html"  },
+      player9:  { password: "p9",  page: "player9.html"  },
+      player10: { password: "p10", page: "player10.html" },
+    };
+
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const u = document.getElementById("username").value.trim().toLowerCase();
+      const p = document.getElementById("password").value;
+      const errorEl = document.getElementById("error");
+      errorEl.textContent = "";
+
+      const record = PLAYERS[u];
+      if (!record || record.password !== p) {
+        errorEl.textContent = "Invalid player login.";
+        return;
+      }
+
+      // Demo “session” (not secure)
+      sessionStorage.setItem("player", u);
+
+      // Redirect to that player's page
+      window.location.href = record.page;
+    });
+  </script>
+</body>
+</html>
