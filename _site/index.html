@@ -1,757 +1,416 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-50K6NQK0QT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-50K6NQK0QT');
-</script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <style type="text/css">body {font-family: 'Roboto Slab', serif;}</style>
-
-    <title>En Hua Hu</title>
-
-          <link rel="shortcut icon" href=images/favicon.jpg>
-    
-          <!--radix_placeholder_navigation_in_header-->
-          <meta name="distill:offset" content=""/>
-
-          <script type="application/javascript">
-
-            window.headroom_prevent_pin = false;
-
-            window.document.addEventListener("DOMContentLoaded", function (event) {
-
-              // initialize headroom for banner
-              var header = $('header').get(0);
-              var headerHeight = header.offsetHeight;
-              var headroom = new Headroom(header, {
-                tolerance: 5,
-                onPin : function() {
-                  if (window.headroom_prevent_pin) {
-                    window.headroom_prevent_pin = false;
-                    headroom.unpin();
-                  }
-                }
-              });
-              headroom.init();
-              if(window.location.hash)
-                headroom.unpin();
-              $(header).addClass('headroom--transition');
-
-              // offset scroll location for banner on hash change
-              // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-              window.addEventListener("hashchange", function(event) {
-                window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-              });
-
-              // responsive menu
-              $('.distill-site-header').each(function(i, val) {
-                var topnav = $(this);
-                var toggle = topnav.find('.nav-toggle');
-                toggle.on('click', function() {
-                  topnav.toggleClass('responsive');
-                });
-              });
-
-              // nav dropdowns
-              $('.nav-dropbtn').click(function(e) {
-                $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-                $(this).parent().siblings('.nav-dropdown')
-                   .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-              });
-              $("body").click(function(e){
-                $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-              });
-              $(".nav-dropdown").click(function(e){
-                e.stopPropagation();
-              });
-            });
-          </script>
-
-          <style type="text/css">
-
-          /* Theme (user-documented overrideables for nav appearance) */
-
-          .distill-site-nav {
-            color: rgba(255, 255, 255, 0.8);
-            background-color: #0F2E3D;
-            font-size: 15px;
-            font-weight: 300;
-          }
-
-          .distill-site-nav a {
-            color: inherit;
-            text-decoration: none;
-          }
-
-          .distill-site-nav a:hover {
-            color: white;
-          }
-
-          @media print {
-            .distill-site-nav {
-              display: none;
-            }
-          }
-
-          .distill-site-header {
-
-          }
-
-          .distill-site-footer {
-
-          }
-
-
-          /* Site Header */
-
-          .distill-site-header {
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 3;
-          }
-
-          .distill-site-header .nav-left {
-            display: inline-block;
-            margin-left: 8px;
-          }
-
-          @media screen and (max-width: 768px) {
-            .distill-site-header .nav-left {
-              margin-left: 0;
-            }
-          }
-
-
-          .distill-site-header .nav-right {
-            float: right;
-            margin-right: 8px;
-          }
-
-          .distill-site-header a,
-          .distill-site-header .title {
-            display: inline-block;
-            text-align: center;
-            padding: 14px 10px 14px 10px;
-          }
-
-          .distill-site-header .title {
-            font-size: 18px;
-            min-width: 150px;
-          }
-
-          .distill-site-header .logo {
-            padding: 0;
-          }
-
-          .distill-site-header .logo img {
-            display: none;
-            max-height: 20px;
-            width: auto;
-            margin-bottom: -4px;
-          }
-
-          .distill-site-header .nav-image img {
-            max-height: 18px;
-            width: auto;
-            display: inline-block;
-            margin-bottom: -3px;
-          }
-
-
-
-          @media screen and (min-width: 1000px) {
-            .distill-site-header .logo img {
-              display: inline-block;
-            }
-            .distill-site-header .nav-left {
-              margin-left: 20px;
-            }
-            .distill-site-header .nav-right {
-              margin-right: 20px;
-            }
-            .distill-site-header .title {
-              padding-left: 12px;
-            }
-          }
-
-
-          .distill-site-header .nav-toggle {
-            display: none;
-          }
-
-          .nav-dropdown {
-            display: inline-block;
-            position: relative;
-          }
-
-          .nav-dropdown .nav-dropbtn {
-            border: none;
-            outline: none;
-            color: rgba(255, 255, 255, 0.8);
-            padding: 16px 10px;
-            background-color: transparent;
-            font-family: inherit;
-            font-size: inherit;
-            font-weight: inherit;
-            margin: 0;
-            margin-top: 1px;
-            z-index: 2;
-          }
-
-          .nav-dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            border: 1px solid rgba(0,0,0,0.15);
-            border-radius: 4px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-            z-index: 1;
-            margin-top: 2px;
-            white-space: nowrap;
-            padding-top: 4px;
-            padding-bottom: 4px;
-          }
-
-          .nav-dropdown-content hr {
-            margin-top: 4px;
-            margin-bottom: 4px;
-            border: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-          }
-
-          .nav-dropdown-active {
-            display: block;
-          }
-
-          .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-            color: black;
-            padding: 6px 24px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-          }
-
-          .nav-dropdown-content .nav-dropdown-header {
-            display: block;
-            padding: 5px 24px;
-            padding-bottom: 0;
-            text-transform: uppercase;
-            font-size: 14px;
-            color: #999999;
-            white-space: nowrap;
-          }
-
-          .nav-dropdown:hover .nav-dropbtn {
-            color: white;
-          }
-
-          .nav-dropdown-content a:hover {
-            background-color: #ddd;
-            color: black;
-          }
-
-          .nav-right .nav-dropdown-content {
-            margin-left: -45%;
-            right: 0;
-          }
-
-          @media screen and (max-width: 768px) {
-            .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-            .distill-site-header a.nav-toggle {
-              float: right;
-              display: block;
-            }
-            .distill-site-header .title {
-              margin-left: 0;
-            }
-            .distill-site-header .nav-right {
-              margin-right: 0;
-            }
-            .distill-site-header {
-              overflow: hidden;
-            }
-            .nav-right .nav-dropdown-content {
-              margin-left: 0;
-            }
-          }
-
-
-          @media screen and (max-width: 768px) {
-            .distill-site-header.responsive {position: relative; min-height: 500px; }
-            .distill-site-header.responsive a.nav-toggle {
-              position: absolute;
-              right: 0;
-              top: 0;
-            }
-            .distill-site-header.responsive a,
-            .distill-site-header.responsive .nav-dropdown {
-              display: block;
-              text-align: left;
-            }
-            .distill-site-header.responsive .nav-left,
-            .distill-site-header.responsive .nav-right {
-              width: 100%;
-            }
-            .distill-site-header.responsive .nav-dropdown {float: none;}
-            .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-            .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-              display: block;
-              width: 100%;
-              text-align: left;
-            }
-          }
-
-          /* Site Footer */
-
-          .distill-site-footer {
-            width: 100%;
-            overflow: hidden;
-            box-sizing: border-box;
-            z-index: 3;
-            margin-top: 30px;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            text-align: center;
-          }
-
-          /* Headroom */
-
-          d-title {
-            padding-top: 6rem;
-          }
-
-          @media print {
-            d-title {
-              padding-top: 4rem;
-            }
-          }
-
-          .headroom {
-            z-index: 1000;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-          }
-
-          .headroom--transition {
-            transition: all .4s ease-in-out;
-          }
-
-          .headroom--unpinned {
-            top: -100px;
-          }
-
-          .headroom--pinned {
-            top: 0;
-          }
-
-          /* adjust viewport for navbar height */
-          /* helps vertically center bootstrap (non-distill) content */
-          .min-vh-100 {
-            min-height: calc(100vh - 100px) !important;
-          }
-
-          </style>
-
-          <style>
-            /* Style primary button (PDF) */
-            .btn-primary {
-              background-color: #EEEEEE;
-              color: #000;
-              padding: 5px 15px;
-              border: 1px solid #000;
-            }
-           
-            /* CSS to make the href buttons smaller */
-            .btn-sm {
-              font-size: 11px; /* Adjust the font size as needed */
-              padding: 2px 5px; /* Adjust the padding to control the button size */
-            }
-           
-          </style>
-
-          <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-          <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-          <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-          <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-          <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-          <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-          <script type="application/javascript">
-
-          function getMeta(metaName) {
-            var metas = document.getElementsByTagName('meta');
-            for (let i = 0; i < metas.length; i++) {
-              if (metas[i].getAttribute('name') === metaName) {
-                return metas[i].getAttribute('content');
-              }
-            }
-            return '';
-          }
-
-          function offsetURL(url) {
-            var offset = getMeta('distill:offset');
-            return offset ? offset + '/' + url : url;
-          }
-
-          function createFuseIndex() {
-
-            // create fuse index
-            var options = {
-              keys: [
-                { name: 'title', weight: 20 },
-                { name: 'categories', weight: 15 },
-                { name: 'description', weight: 10 },
-                { name: 'contents', weight: 5 },
-              ],
-              ignoreLocation: true,
-              threshold: 0
-            };
-            var fuse = new window.Fuse([], options);
-
-            // fetch the main search.json
-            return fetch(offsetURL('search.json'))
-              .then(function(response) {
-                if (response.status == 200) {
-                  return response.json().then(function(json) {
-                    // index main articles
-                    json.articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                    // download collections and index their articles
-                    return Promise.all(json.collections.map(function(collection) {
-                      return fetch(offsetURL(collection)).then(function(response) {
-                        if (response.status === 200) {
-                          return response.json().then(function(articles) {
-                            articles.forEach(function(article) {
-                              fuse.add(article);
-                            });
-                          })
-                        } else {
-                          return Promise.reject(
-                            new Error('Unexpected status from search index request: ' +
-                                      response.status)
-                          );
-                        }
-                      });
-                    })).then(function() {
-                      return fuse;
-                    });
-                  });
-
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                                response.status)
-                  );
-                }
-              });
-          }
-
-          window.document.addEventListener("DOMContentLoaded", function (event) {
-
-            // get search element (bail if we don't have one)
-            var searchEl = window.document.getElementById('distill-search');
-            if (!searchEl)
-              return;
-
-            createFuseIndex()
-              .then(function(fuse) {
-
-                // make search box visible
-                searchEl.classList.remove('hidden');
-
-                // initialize autocomplete
-                var options = {
-                  autoselect: true,
-                  hint: false,
-                  minLength: 2,
-                };
-                window.autocomplete(searchEl, options, [{
-                  source: function(query, callback) {
-                    const searchOptions = {
-                      isCaseSensitive: false,
-                      shouldSort: true,
-                      minMatchCharLength: 2,
-                      limit: 10,
-                    };
-                    var results = fuse.search(query, searchOptions);
-                    callback(results
-                      .map(function(result) { return result.item; })
-                    );
-                  },
-                  templates: {
-                    suggestion: function(suggestion) {
-                      var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                        ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                        : '';
-                      var html = `
-                        <div class="search-item">
-                          <h3>${suggestion.title}</h3>
-                          <div class="search-item-description">
-                            ${suggestion.description || ''}
-                          </div>
-                          <div class="search-item-preview">
-                            ${img}
-                          </div>
-                        </div>
-                      `;
-                      return html;
-                    }
-                  }
-                }]).on('autocomplete:selected', function(event, suggestion) {
-                  window.location.href = offsetURL(suggestion.path);
-                });
-                // remove inline display style on autocompleter (we want to
-                // manage responsive display via css)
-                $('.algolia-autocomplete').css("display", "");
-              })
-              .catch(function(error) {
-                console.log(error);
-              });
-
-          });
-
-          </script>
-
-          <style type="text/css">
-
-          .nav-search {
-            font-size: x-small;
-          }
-
-          /* Algolioa Autocomplete */
-
-          .algolia-autocomplete {
-            display: inline-block;
-            margin-left: 10px;
-            vertical-align: sub;
-            background-color: white;
-            color: black;
-            padding: 6px;
-            padding-top: 8px;
-            padding-bottom: 0;
-            border-radius: 6px;
-            border: 1px #0F2E3D solid;
-            width: 180px;
-          }
-
-
-          @media screen and (max-width: 768px) {
-            .distill-site-nav .algolia-autocomplete {
-              display: none;
-              visibility: hidden;
-            }
-            .distill-site-nav.responsive .algolia-autocomplete {
-              display: inline-block;
-              visibility: visible;
-            }
-            .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-              margin-left: 0;
-              width: 400px;
-              max-height: 400px;
-            }
-          }
-
-          .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-            width: 90%;
-            outline: none;
-            border: none;
-          }
-
-          .algolia-autocomplete .aa-hint {
-            color: #999;
-          }
-          .algolia-autocomplete .aa-dropdown-menu {
-            width: 800px;
-            max-height: 70vh;
-            overflow-x: visible;
-            overflow-y: scroll;
-            padding: 5px;
-            margin-top: 3px;
-            margin-left: -150px;
-            background-color: #fff;
-            border-radius: 5px;
-            border: 1px solid #999;
-            border-top: none;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-            cursor: pointer;
-            padding: 5px 4px;
-            border-bottom: 1px solid #eee;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-            border-bottom: none;
-            margin-bottom: 2px;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-            overflow: hidden;
-            font-size: 0.8em;
-            line-height: 1.4em;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-            font-size: 1rem;
-            margin-block-start: 0;
-            margin-block-end: 5px;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-            display: inline-block;
-            overflow: hidden;
-            height: 2.8em;
-            width: 80%;
-            margin-right: 4%;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-            display: inline-block;
-            width: 15%;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-            height: 3em;
-            width: auto;
-            display: none;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-            display: initial;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-            background-color: #eee;
-          }
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-            font-weight: bold;
-            font-style: normal;
-          }
-
-          </style>
-
-
-          <!--/radix_placeholder_navigation_in_header-->
-          <!--radix_placeholder_site_in_header-->
-          <!--/radix_placeholder_site_in_header-->
-          
-          <style type="text/css">
-          body {
-            padding-top: 60px;
-          }
-          </style>         
-    
-    
-  </head>
-  <body>
-
-          <!--radix_placeholder_navigation_before_body-->
-          <header class="header header--fixed" role="banner">
-          <nav class="distill-site-nav distill-site-header">
-          <div class="nav-left">
-          <a href="index.html" class="title">En Hua Hu</a>
-          <a href="research.html">Research</a>
-          <a href="CV.html">CV</a>
-          <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-          </div>
-          <div class="nav-right">          
-          </div>
-          </nav>
-          </header>
-          <!--/radix_placeholder_navigation_before_body-->
-          <!--radix_placeholder_site_before_body-->
-          <!--/radix_placeholder_site_before_body-->
-    
-    <div class="container-fluid d-none d-lg-block d-xl-block">
-      <div class="d-flex row flex-row vh-100">
-        <div class="d-flex flex-column col-5 align-items-center text-center align-self-center">
-          <div class="mx-auto text-center">
-            <div class="p-3">
-              <img src=images/profile2.jpg style="height:30rem" class="rounded">
-            </div>
-            <div class="p-2">
-              <h1>En Hua Hu</h1>
-            </div>
-            <hr style="width:60%;"/>
-            <div class="p-2">
-              <div id="icon-list">
-                <ul class="list-inline">
-                                  </ul>
-              </div>
-            </div>
-          </div>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50K6NQK0QT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50K6NQK0QT');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>En Hua Hu</title>
+  <link rel="shortcut icon" href="images/favicon.jpg">
+
+  <meta property="og:title" content="En Hua Hu">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="En Hua Hu">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:        #1b282e;
+      --muted:      #5d6b72;
+      --teal:       #0F2E3D;
+      --teal-link:  #1f5b78;
+      --teal-hover: #0F2E3D;
+      --tint:       #eef4f7;
+      --rule:       rgba(15, 46, 61, 0.12);
+      --bg:         #ffffff;
+      --maxw:       880px;
+      --display:    'Roboto Slab', Georgia, serif;
+      --body:       -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: var(--teal-link); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ---------- Top nav ---------- */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--teal);
+      color: rgba(255,255,255,0.82);
+    }
+    .topnav .inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+    .topnav .brand {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+    .topnav nav a {
+      color: rgba(255,255,255,0.82);
+      font-size: 15px;
+      margin-left: 22px;
+      text-decoration: none;
+    }
+    .topnav nav a:hover { color: #fff; text-decoration: none; }
+
+    /* ---------- Layout shell ---------- */
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { scroll-margin-top: 74px; }
+
+    /* ---------- About / hero ---------- */
+    .about {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 44px;
+      align-items: start;
+      padding: 64px 0 56px;
+    }
+    .about .photo {
+      width: 240px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 6px 28px rgba(15,46,61,0.16);
+      display: block;
+    }
+    .about .photo-col { position: sticky; top: 78px; }
+
+    .about h1 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 1.1;
+      margin: 0 0 6px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .about .role {
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0 0 22px;
+    }
+    .about p.bio { margin: 0 0 14px; }
+
+    .meta {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      font-size: 15.5px;
+      color: var(--muted);
+    }
+    .meta .label {
+      display: inline-block;
+      width: 78px;
+      color: var(--teal);
+      font-weight: 500;
+    }
+    .meta .row { margin-bottom: 6px; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 7px 16px;
+      border: 1px solid var(--teal);
+      border-radius: 5px;
+      color: var(--teal);
+      font-size: 14.5px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: background .15s ease, color .15s ease;
+    }
+    .btn:hover { background: var(--teal); color: #fff; text-decoration: none; }
+
+    /* ---------- Section headings ---------- */
+    .research { padding: 8px 0 72px; }
+
+    .section-title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 46px;
+      height: 3px;
+      background: var(--teal);
+      margin-top: 10px;
+    }
+
+    .subhead {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 40px 0 8px;
+    }
+
+    /* ---------- Papers ---------- */
+    .paper {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .paper:last-of-type { border-bottom: none; }
+
+    .paper-title {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 19px;
+      line-height: 1.35;
+      margin: 0;
+      color: var(--ink);
+    }
+    .paper-title a { color: var(--ink); }
+    .paper-title a:hover { color: var(--teal-link); text-decoration: none; }
+
+    .tag {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+      padding: 2px 9px;
+      border: 1px solid var(--teal-link);
+      border-radius: 999px;
+      font-family: var(--body);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--teal-link);
+      white-space: nowrap;
+    }
+
+    .authors {
+      margin: 6px 0 0;
+      font-size: 15.5px;
+      color: var(--muted);
+    }
+    .extra-links {
+      margin: 6px 0 0;
+      font-size: 14.5px;
+    }
+
+    details.abstract { margin-top: 12px; }
+    details.abstract > summary {
+      list-style: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--teal-link);
+      user-select: none;
+      width: max-content;
+    }
+    details.abstract > summary::-webkit-details-marker { display: none; }
+    details.abstract > summary::before {
+      content: "";
+      width: 0; height: 0;
+      border-left: 5px solid currentColor;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      transition: transform .18s ease;
+    }
+    details.abstract[open] > summary::before { transform: rotate(90deg); }
+
+    details.abstract .body {
+      margin-top: 12px;
+      padding: 16px 18px;
+      background: var(--tint);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 6px 6px 0;
+      font-size: 15px;
+      line-height: 1.62;
+      color: #28363c;
+    }
+    details.abstract .body p { margin: 0; }
+
+    .wip-note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 26px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 720px) {
+      body { font-size: 16px; }
+      .about {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 40px 0 36px;
+        text-align: left;
+      }
+      .about .photo-col { position: static; justify-self: center; }
+      .about .photo { width: 200px; height: 250px; }
+      .about h1 { font-size: 32px; }
+      .topnav nav a { margin-left: 16px; }
+      .topnav .inner { padding: 0 18px; }
+      .wrap { padding: 0 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topnav">
+    <div class="inner">
+      <span class="brand">En Hua Hu</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about">
+      <div class="wrap about">
+        <div class="photo-col">
+          <img class="photo" src="images/profile2.jpg" alt="En Hua Hu">
         </div>
-        <div class="d-flex flex-column vh-100 border-left"></div>
-        <div class="d-flex flex-column col px-5 align-items-center align-self-center mh-100" style="overflow-y: scroll;">
-          <div class="p pt-4 px-5">
-              <h5> Bio [<a href="static/files/CV.pdf" target="_blank" rel="noopener noreferrer">Full CV</a>] </h5>
-              <p>I am an economist working in behavioral economics and decision theory. I use theoretical, experimental and empirical methods to explore topics related to ambiguity, belief updating, complexity, procedural choice and others.</p>
-              <p>I obtained my PhD at <a href="https://www.economics.utoronto.ca" target="_blank" rel="noopener noreferrer">University of Toronto</a> under the supervision of <a href="https://yoram-halevy.faculty.economics.utoronto.ca/" target="_blank" rel="noopener noreferrer">Yoram Halevy</a> and <a href="https://sites.google.com/view/colinstewart/home" target="_blank" rel="noopener noreferrer">Colin Stewart</a>. </p>
-              <p>I am currently a Postdoctoral Prize Research Fellow at Nuffield College, Oxford.</p>
-              <p> Contact: huenhua123[at]gmail.com</p>
-              <br />              
-            </div>
+        <div class="about-text">
+          <h1>En Hua Hu</h1>
+
+          <p class="bio">I am an economist working in behavioral economics and decision theory. I use theoretical, experimental and empirical methods to explore topics related to ambiguity, belief updating, complexity, procedural choice and others.</p>
+
+          <p class="bio">I obtained my PhD at <a href="https://www.economics.utoronto.ca" target="_blank" rel="noopener noreferrer">University of Toronto</a> under the supervision of <a href="https://yoram-halevy.faculty.economics.utoronto.ca/" target="_blank" rel="noopener noreferrer">Yoram Halevy</a> and <a href="https://sites.google.com/view/colinstewart/home" target="_blank" rel="noopener noreferrer">Colin Stewart</a>.</p>
+
+          <p class="bio">I am currently a Postdoctoral Prize Research Fellow at Nuffield College, Oxford.</p>
+
+          <div class="meta">
+            <a class="btn" href="static/files/CV.pdf" target="_blank" rel="noopener noreferrer">View full CV (PDF)</a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container-flex min-vh-100 d-block d-lg-none d-xl-none">
-      <div class="d-flex flex-row justify-content-center">
-        <div class="d-flex flex-col">
-          <div class="mx-auto">
-            <div class="p-3 mt-3 text-center">
-              <img src=images/profile2.jpg style="height:30rem" class="rounded">
-            </div>
-            <div class="p-2 text-center">
-              <h1>En Hua Hu</h1>
-            </div>
-            <hr style="width:60%;"/>
+    <!-- ===================== RESEARCH ===================== -->
+    <section id="research">
+      <div class="wrap research">
+        <h2 class="section-title">Research</h2>
 
-            <div class="row justify-content-center align-items-center">
-              <div class="col-8 p-1 text-center">
-                <div class="list-group">
-                                  </div>
-              </div>
+        <h3 class="subhead">Working Papers</h3>
+
+        <article class="paper">
+          <h4 class="paper-title">
+            <a href="static/files/CI.pdf" target="_blank" rel="noopener noreferrer">Confidence in Inference</a>
+            <span class="tag">R&amp;R at ReStud</span>
+          </h4>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="body">
+              <p>Do people behave as if they know how informative signals are? I axiomatically identify the restrictions on choice implied by certainty about the information structure in a sample environment. Certainty is equivalent to a separability axiom and yields parallel linear indifference curves in the space of samples. This equivalence does not depend on expected utility or Bayesian updating and holds for a broad class of monotone updating and choice rules. A controlled experiment shows that certainty about the information structure is rejected for 95% of subjects. Subjects are insensitive to the stated information structure and instead choose based solely on sample characteristics. Many decisions display a sample-size neglect bias. Using an incentive-compatible confidence elicitation method, I find that sample-size neglect is positively associated with confidence, suggesting that subjects act as if they are uncertain about the information structure even when it is explicitly provided.</p>
             </div>
-            <div class="p pt-4 px-5">
-              <h5> Bio [<a href="static/files/CV.pdf" target="_blank" rel="noopener noreferrer">Full CV</a>] </h5>
-              <p>I am an economist working in behavioral economics and decision theory. I use theoretical, experimental and empirical methods to explore topics related to ambiguity, belief updating, complexity, procedural choice and others.</p>
-              <p>I obtained my PhD at <a href="https://www.economics.utoronto.ca" target="_blank" rel="noopener noreferrer">University of Toronto</a> under the supervision of <a href="https://yoram-halevy.faculty.economics.utoronto.ca/" target="_blank" rel="noopener noreferrer">Yoram Halevy</a> and <a href="https://sites.google.com/view/colinstewart/home" target="_blank" rel="noopener noreferrer">Colin Stewart</a>. </p>
-              <p>I am currently a Postdoctoral Prize Research Fellow at Nuffield College, Oxford.</p>
-              <p> Contact: huenhua123[at]gmail.com</p>
-              <br />              
+          </details>
+        </article>
+
+        <article class="paper">
+          <h4 class="paper-title">
+            <a href="static/files/PMCR.pdf" target="_blank" rel="noopener noreferrer">A Procedural Model of Complexity Under Risk</a>
+          </h4>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="body">
+              <p>I consider a decision-maker who uses rules to simplify lotteries in order to compare them. I characterize expected utility in this setting and highlight its complexity requirements which a purely axiomatic characterization overlooks. I relax these requirements to characterize two models of complexity aversion: outcome support size cost and entropy cost models. I consider an additional aspect of complexity: decision-makers find it easier to evaluate a lottery when outcomes are close in value. To capture this, I characterize a third model of complexity aversion. Here the DM first partitions together outcomes which are close in value and then evaluates the lottery along with the complexity of the partition. This representation offers a measure of complexity which is not restricted to the probability and support size but also accounts for the cardinal values of the outcomes. I also compare empirically the models and find support for partition complexity.</p>
             </div>
-        </div>
+          </details>
+        </article>
+
+        <article class="paper">
+          <h4 class="paper-title">
+            <a href="static/files/CHHX_2026.pdf" target="_blank" rel="noopener noreferrer">Updating and Misspecification: Evidence from a Field Experiment</a>
+          </h4>
+          <p class="authors">with <a href="https://www.marcchatelain.com/" target="_blank" rel="noopener noreferrer">Marc-Antoine Châtelain</a>, <a href="https://sites.google.com/view/paul-han" target="_blank" rel="noopener noreferrer">Paul Han</a> and <a href="https://sites.google.com/view/xinerxu/home" target="_blank" rel="noopener noreferrer">Xiner Xu</a></p>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="body">
+              <p>Misspecification is theoretically linked with updating failures, but empirical evidence has been lacking. We document the empirical relevance and estimate the impact of misspecification on updating. We collect a novel high-frequency dataset on students' beliefs about grades in a freshman course. Students are overconfident, their beliefs do not improve over time, and they overestimate the testing noise by a factor of 3. Our RCT exogenously shocks and improves students' belief in the testing noise. Treated students reduce their prediction errors by 32%. We estimate the impact of misspecification structurally and find that a lower bound of 25% of prediction errors can be attributed to misspecification. Our finding suggests that misspecification is a major obstacle to processing information correctly, but it can be alleviated via simple interventions.</p>
+            </div>
+          </details>
+        </article>
+
+        <article class="paper">
+          <h4 class="paper-title">
+            <a href="static/files/HadadHu.pdf" target="_blank" rel="noopener noreferrer">What makes a matching market congested?</a>
+            <span class="tag">Accepted at EC26</span>
+          </h4>
+          <p class="authors">with <a href="https://justinhadad.com/" target="_blank" rel="noopener noreferrer">Justin Hadad</a></p>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="body">
+              <p>We study a decentralized matching market where each applicant sends a fixed number of applications and then firms make one offer. Our game emulates matching markets under time constraints: agents who are unmatched after the round remain unmatched. Congestion arises from two basic market failures: some firms do not receive applications (an issue of coverage), and some applicants receive multiple offers (an issue of collisions). We study how the market size, degree of preference alignment, and number of applications affect congestion. Aligned preferences and screening worsen congestion when there is no possibility to coordinate, and additional applications do not always alleviate congestion; optimal quotas are typically small.</p>
+            </div>
+          </details>
+        </article>
+
+        <h3 class="subhead">Work in Progress</h3>
+        <p class="wip-note">More coming soon.</p>
       </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>En Hua Hu</span>
+      <span>huenhua123[at]gmail.com</span>
     </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-      <!--radix_placeholder_site_after_body-->
-      <!--/radix_placeholder_site_after_body-->
-      <!--radix_placeholder_navigation_after_body-->
-      <!--/radix_placeholder_navigation_after_body-->
-  
-  </body>
+  </footer>
+</body>
 </html>
