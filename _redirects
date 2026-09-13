@@ -1,2 +1,27 @@
-# Keep the archived old site in the repo but unreachable on the web.
-/_archive/*   /404.html   404
+# Old pages, now merged into the homepage
+/research.html                      /#research              301
+/CV.html                            /static/files/CV.pdf    301
+
+# Superseded files -> current versions
+/static/files/CV__En_Hua_Hu.pdf     /static/files/CV.pdf    301
+/static/files/CI07032024.pdf        /static/files/CI.pdf    301
+/static/files/ProceduralComplexity.pdf                      /static/files/PMCR.pdf  301
+/static/files/A_Procedural_Model_of_Complexity_Under_Risk.pdf  /static/files/PMCR.pdf  301
+
+# Retired for good: tell Google to drop these rather than just 404 them
+/static/files/2SBMS.pdf             /404.html   410
+/static/files/Two_Step_Bootstrap_Model_Selection.pdf  /404.html  410
+/static/files/TUS.pdf               /404.html   410
+/static/files/CIShortSlides.pdf     /404.html   410
+/static/files/PMCRSlides.pdf        /404.html   410
+/static/files/MisspecificationSlides.pdf  /404.html  410
+/static/files/NuffieldPrep.pdf      /404.html   410
+/static/files/Lec_4.pdf             /404.html   410
+/static/files/Lec_5.pdf             /404.html   410
+/static/files/Lec_6.pdf             /404.html   410
+/static/CV                          /404.html   410
+/gamelogin.html                     /404.html   410
+/player1.html                       /404.html   410
+
+# Keep the archived old site in the repo but unreachable on the web
+/_archive/*                         /404.html   404
