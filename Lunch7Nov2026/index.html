@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#23483c">
+  <meta name="description" content="A beautifully simple, itemized split of our Magdalen Arms dinner on 7 November 2026.">
+  <title>Our dinner split · The Magdalen Arms</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5ef;
+      --paper-deep:#f0eee6;
+      --white:#ffffff;
+      --ink:#223c33;
+      --ink-2:#53635b;
+      --muted:#78847e;
+      --pine:#23483c;
+      --pine-2:#315d4b;
+      --mint:#e7f0e8;
+      --copper:#b48a5b;
+      --rule:#e4e5dc;
+      --shadow:0 17px 58px rgba(35,63,49,.065);
+      --radius:22px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 88% 4%, rgba(199,211,182,.27),transparent 380px),
+        radial-gradient(circle at 5% 36%, rgba(218,201,176,.18),transparent 360px),
+        var(--paper);
+      min-width:320px;
+    }
+    button, input, select { font:inherit; }
+    button { cursor:pointer; }
+    button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible { outline:3px solid #b4874f; outline-offset:3px; }
+    .wrap { width:min(1140px,calc(100% - 48px)); margin:auto; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:30px 0 0; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand-mark { background:var(--pine); color:#fff; display:grid; place-items:center; border-radius:12px; width:42px; height:42px; font-family:Georgia,serif; font-size:25px; letter-spacing:-.12em; padding-right:3px; }
+    .brand-name { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.17em; }
+    .brand-sub { color:var(--muted); font-size:12px; margin-top:4px; }
+    .top-note { color:var(--ink-2); font-size:12px; letter-spacing:.08em; text-transform:uppercase; text-align:right; }
+    .hero { display:grid; grid-template-columns:1.15fr .78fr; gap:58px; align-items:center; padding:72px 0 66px; }
+    .kicker { display:flex; gap:12px; align-items:center; font-size:11px; letter-spacing:.19em; text-transform:uppercase; font-weight:800; color:var(--pine-2); }
+    .kicker::before { content:''; width:30px; height:1px; background:var(--copper); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font:normal clamp(53px,7.2vw,94px)/.99 Georgia,"Times New Roman",serif; letter-spacing:-.065em; margin:21px 0 22px; }
+    h1 em { font-weight:normal; color:#8d9479; }
+    .lead { color:var(--ink-2); font-size:16px; line-height:1.75; max-width:510px; margin:0; }
+    .hero-card {
+      background:var(--pine);
+      color:#fff;
+      border-radius:22px;
+      padding:32px 35px 27px;
+      min-height:292px;
+      position:relative;
+      box-shadow:0 22px 50px rgba(35,72,60,.16);
+      overflow:hidden;
+    }
+    .hero-card::before { content:""; position:absolute; width:210px; height:210px; right:-85px; top:-105px; border-radius:50%; border:35px solid rgba(233,234,206,.055); pointer-events:none; }
+    .hero-card::after { content:""; position:absolute; left:35px; right:35px; bottom:73px; border-top:1px dashed rgba(255,255,255,.22); }
+    .total-label { text-transform:uppercase; letter-spacing:.17em; color:#c3d9cb; font-size:11px; font-weight:750; }
+    .total-money { font:normal clamp(52px,5.7vw,76px)/1 Georgia,serif; letter-spacing:-.045em; margin:15px 0 12px; white-space:nowrap; }
+    .hero-card small { color:#bed1c7; font-size:12px; }
+    .hero-card-bottom { display:flex; justify-content:space-between; align-items:end; margin-top:41px; gap:12px; }
+    .hero-card-bottom .when { color:#fff; font-size:14px; line-height:1.6; }
+    .hero-card-bottom .when span { color:#bed1c7; display:block; font-size:11px; }
+    .round-mark { width:45px; height:45px; border:1px solid #7d9d8a; border-radius:50%; display:grid; place-items:center; font-family:Georgia,serif; font-size:22px; color:#d4dccd; flex:0 0 auto; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,1fr); background:rgba(255,255,255,.58); border:1px solid var(--rule); border-radius:18px; overflow:hidden; margin-bottom:49px; }
+    .metric { padding:23px 33px; }
+    .metric+.metric { border-left:1px solid var(--rule); }
+    .metric strong { display:block; font:normal 30px/1.15 Georgia,serif; }
+    .metric span { display:block; font-size:12px; color:var(--muted); margin-top:8px; }
+    .panel { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); border:1px solid #ebebe3; overflow:hidden; }
+    .panel-head { display:flex; align-items:end; justify-content:space-between; gap:24px; padding:31px 35px 26px; }
+    .panel-eyebrow { color:var(--copper); font-size:11px; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
+    h2 { font:normal 37px/1.08 Georgia,serif; letter-spacing:-.035em; margin:9px 0 0; }
+    .panel-description { font-size:13px; color:var(--muted); max-width:310px; line-height:1.6; text-align:right; margin:0; }
+    .toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:13px 35px; gap:15px; }
+    .tabs { display:inline-flex; padding:4px; background:var(--paper); border-radius:12px; }
+    .tab { background:transparent; border:0; padding:10px 17px; color:var(--ink-2); font-size:13px; font-weight:650; border-radius:9px; }
+    .tab[aria-selected="true"] { background:var(--pine); color:#fff; box-shadow:0 2px 5px rgba(0,0,0,.08); }
+    .controls { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
+    .search-wrap { position:relative; }
+    .search-wrap svg { position:absolute; top:50%; left:13px; transform:translateY(-50%); opacity:.53; pointer-events:none; }
+    .search { width:225px; padding:11px 14px 11px 38px; background:#fff; border:1px solid var(--rule); border-radius:10px; color:var(--ink); font-size:13px; }
+    .search::placeholder { color:#9a9e96; }
+    .sort { padding:11px 12px; background:#fff; color:var(--ink); border:1px solid var(--rule); border-radius:10px; font-size:13px; max-width:160px; }
+    .table-wrap { overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; text-align:left; }
+    th { font-size:11px; text-transform:uppercase; letter-spacing:.115em; color:#7c867e; font-weight:750; padding:18px 35px 15px; background:#fbfbf8; white-space:nowrap; }
+    th.right,td.right { text-align:right; }
+    td { padding:17px 35px; border-top:1px solid #eff0e9; font-size:14px; vertical-align:middle; }
+    .person-row { transition:background .15s; }
+    .person-row:hover,.dish-row:hover { background:#f8faf6; }
+    .person-row.open,.dish-row.open { background:#f2f7f0; }
+    .person-button, .dish-button { display:flex; align-items:center; gap:14px; background:transparent; border:0; color:inherit; text-align:left; padding:0; width:100%; min-width:170px; }
+    .avatar { background:#e9efe5; color:#42614c; border-radius:50%; height:39px; width:39px; display:grid; place-items:center; font:normal 18px Georgia,serif; flex:0 0 auto; }
+    .person-row.open .avatar { background:var(--pine); color:#fff; }
+    .person-primary { display:block; font-weight:750; font-size:14px; letter-spacing:-.01em; }
+    .person-name-note { color:var(--muted); font-size:11px; font-weight:500; letter-spacing:0; }
+    .person-secondary { display:block; font-size:11px; margin-top:5px; color:var(--muted); }
+    .amount { font-variant-numeric:tabular-nums; white-space:nowrap; }
+    .main-money { font-size:18px; font-weight:750; letter-spacing:-.025em; }
+    .total-wrap { display:flex; justify-content:flex-end; align-items:center; gap:14px; }
+    .minibar { width:67px; height:6px; background:#e4e9e3; border-radius:5px; overflow:hidden; }
+    .minibar span { height:100%; background:#6f917d; display:block; border-radius:5px; }
+    .chevron { width:18px; height:18px; color:#819086; transform:rotate(0deg); transition:transform .2s; flex:0 0 auto; }
+    .open .chevron { transform:rotate(180deg); }
+    .detail-row td { padding:0 35px 20px; border-top:0; background:#f2f7f0; }
+    .detail-inner { border-radius:14px; border:1px solid #dfe9de; background:#fff; overflow:hidden; }
+    .detail-titlebar { padding:19px 23px; display:flex; align-items:center; justify-content:space-between; gap:15px; border-bottom:1px solid var(--rule); }
+    .detail-titlebar h3 { margin:0; font:normal 23px Georgia,serif; }
+    .detail-titlebar p { margin:5px 0 0; color:var(--muted); font-size:12px; }
+    .small-button { border:1px solid #d4dfd5; border-radius:9px; background:#fff; color:var(--pine); padding:10px 13px; font-size:12px; font-weight:750; display:inline-flex; gap:8px; align-items:center; white-space:nowrap; }
+    .small-button:hover { background:#edf5ed; }
+    .detail-list { padding:9px 23px 7px; }
+    .detail-line { display:flex; justify-content:space-between; gap:18px; align-items:center; padding:12px 0; border-bottom:1px solid #f0f0e9; }
+    .detail-line:last-child { border:0; }
+    .detail-name { font-size:13px; font-weight:650; }
+    .detail-sub { color:var(--muted); margin-top:3px; font-size:11px; }
+    .detail-value { font-size:14px; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; }
+    .detail-footer { display:grid; grid-template-columns:1fr auto; gap:10px 20px; padding:16px 23px 20px; background:#fafbf8; border-top:1px solid var(--rule); font-size:13px; }
+    .detail-footer .service-label { color:var(--ink-2); }
+    .detail-footer .due-label { font-weight:800; padding-top:9px; border-top:1px solid var(--rule); }
+    .detail-footer .due-number { font-weight:800; color:var(--pine); font-size:20px; padding-top:7px; border-top:1px solid var(--rule); }
+    .panel-bottom { display:flex; align-items:center; justify-content:space-between; gap:15px; border-top:1px solid var(--rule); padding:18px 35px; }
+    .muted { color:var(--muted); font-size:12px; line-height:1.55; }
+    .text-btn { background:transparent; border:0; font-size:12px; font-weight:750; color:var(--pine); padding:10px 0; }
+    .text-btn:hover { text-decoration:underline; }
+    .dish-name { display:block; font-weight:750; font-size:14px; }
+    .dish-detail { font-size:11px; color:var(--muted); display:block; margin-top:5px; }
+    .dish-assignees { color:#62756a; font-size:12px; max-width:520px; line-height:1.6; }
+    .pill { background:#eef2e9; border:1px solid #e0eadd; color:#547158; border-radius:999px; padding:5px 10px; font-weight:650; font-size:11px; display:inline-block; margin-top:8px; }
+    .dish-total { font-size:16px; font-weight:750; }
+    .dish-row.open { background:#f2f7f0; }
+    .dish-row .chevron { margin-left:auto; }
+    .table-empty { padding:53px 25px; text-align:center; color:var(--muted); }
+    [hidden] { display:none!important; }
+    .afterword { display:grid; grid-template-columns:1.05fr .95fr; gap:28px; margin:33px 0 65px; }
+    .note-card { border-radius:18px; padding:28px 31px; border:1px solid var(--rule); background:rgba(255,255,255,.60); }
+    .note-card.dark { background:#e7ede5; border-color:#dce6dc; }
+    .note-card h3 { font:normal 24px Georgia,serif; margin:0 0 13px; }
+    .note-card p { font-size:13px; line-height:1.75; color:var(--ink-2); margin:0; }
+    .note-card p+p { margin-top:10px; }
+
+    .receipt-proof { margin:0 0 38px; }
+    .receipt-proof .note-card { overflow:hidden; }
+    .receipt-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap:24px; align-items:start; }
+    .receipt-copy p { font-size:13px; line-height:1.75; color:var(--ink-2); margin:0; }
+    .receipt-copy p + p { margin-top:10px; }
+    .receipt-shot { display:block; width:100%; border-radius:16px; border:1px solid var(--rule); background:#f8f8f4; box-shadow:var(--shadow); }
+    .caption { color:var(--muted); font-size:11px; margin-top:10px; }
+
+    .payment-section { display:grid; grid-template-columns:.8fr 1.2fr; gap:33px; margin-top:28px; padding:31px 35px; background:var(--pine); border-radius:var(--radius); box-shadow:0 14px 40px rgba(35,72,60,.10); color:#fff; align-items:start; }
+    .payment-intro h2 { margin:8px 0 12px; font-size:36px; color:#fff; }
+    .payment-intro .panel-eyebrow { color:#e2c5a0; }
+    .payment-intro p { font-size:13px; line-height:1.75; color:#d5e3d9; margin:0 0 18px; max-width:340px; }
+    .payment-copy-all { color:var(--pine); background:#fff; border-color:#fff; }
+    .bank-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .bank-field { border:1px solid rgba(255,255,255,.16); border-radius:12px; background:rgba(255,255,255,.065); padding:16px 15px; display:flex; gap:9px; align-items:end; justify-content:space-between; min-width:0; }
+    .bank-field strong { display:block; font-size:15px; font-weight:750; letter-spacing:.005em; white-space:nowrap; }
+    .bank-label { display:block; color:#c5d5c9; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.11em; margin-bottom:11px; }
+    .bank-number { font-variant-numeric:tabular-nums; letter-spacing:.05em!important; }
+    .bank-copy { background:transparent; border:1px solid #729480; border-radius:7px; padding:6px 9px; color:#fff; font-size:11px; flex:0 0 auto; }
+    .bank-copy:hover { background:rgba(255,255,255,.13); }
+    .detail-actions { display:flex; align-items:center; gap:7px; flex-wrap:wrap; justify-content:flex-end; }
+    .site-footer { padding:0 0 39px; display:flex; justify-content:space-between; gap:15px; color:#8b948d; font-size:11px; }
+    .toast { position:fixed; z-index:10; bottom:25px; left:50%; transform:translate(-50%,18px); background:var(--pine); color:#fff; font-size:13px; border-radius:12px; padding:13px 18px; box-shadow:0 10px 30px rgba(0,0,0,.14); opacity:0; pointer-events:none; transition:opacity .18s,transform .18s; }
+    .toast.show { opacity:1; transform:translate(-50%,0); }
+    @media (max-width: 890px) {
+      .hero { gap:32px; }
+      .hero-card { padding:27px; }
+      .toolbar { align-items:flex-start; }
+      .controls { width:100%; }
+      .search-wrap { flex:1 1 220px; }
+      .search { width:100%; }
+      th,td { padding-left:23px; padding-right:23px; }
+      .panel-head,.toolbar,.panel-bottom { padding-left:23px; padding-right:23px; }
+      .detail-row td { padding-left:23px; padding-right:23px; }
+    }
+    @media (max-width: 650px) {
+      .wrap { width:min(100% - 30px,1140px); }
+      .topbar { padding-top:17px; }
+      .top-note { display:none; }
+      .hero { grid-template-columns:1fr; padding:47px 0 32px; gap:30px; }
+      h1 { font-size:clamp(49px,12vw,75px); margin:17px 0 16px; }
+      .lead { font-size:14px; }
+      .hero-card { min-height:248px; }
+      .total-money { font-size:60px; }
+      .hero-card-bottom { margin-top:35px; }
+      .metric-strip { margin-bottom:26px; }
+      .metric { padding:16px 14px; }
+      .metric strong { font-size:23px; }
+      .metric span { font-size:10px; line-height:1.4; }
+      .panel-head { display:block; padding:24px 19px 18px; }
+      .panel-head h2 { font-size:31px; }
+      .panel-description { text-align:left; margin:12px 0 0; }
+      .toolbar { padding:12px 19px; }
+      .tabs { width:100%; }
+      .tab { flex:1; }
+      .sort { flex:1 1 140px; max-width:none; }
+      .table-wrap { overflow-x:visible; }
+      th,td { padding-left:18px; padding-right:18px; }
+      .th-food,.td-food,.th-service,.td-service,.minibar { display:none; }
+      .person-button,.dish-button { min-width:0; gap:10px; }
+      .avatar { width:36px; height:36px; }
+      .person-primary { font-size:13px; }
+      .person-secondary { font-size:10px; }
+      .main-money { font-size:16px; }
+      .total-wrap { gap:6px; }
+      .chevron { width:15px; }
+      .detail-row td { padding:0 12px 15px; }
+      .detail-titlebar { padding:15px; gap:10px; }
+      .detail-titlebar h3 { font-size:21px; }
+      .detail-list { padding:5px 15px; }
+      .detail-footer { padding:16px 15px; }
+      .small-button { font-size:11px; padding:8px 10px; }
+      .panel-bottom { padding:13px 18px; }
+      .th-assignees,.dish-assignees { display:none; }
+      .afterword { grid-template-columns:1fr; gap:14px; margin-top:19px; margin-bottom:35px; }
+
+      .receipt-grid { grid-template-columns:1fr; }
+      .payment-section { grid-template-columns:1fr; gap:23px; padding:25px 19px; }
+      .bank-field { padding:13px 11px; flex-wrap:wrap; }
+      .bank-field strong { font-size:13px; }
+
+      .note-card { padding:24px; }
+      .site-footer { flex-direction:column; }
+    }
+    @media (max-width:380px) { .bank-grid { grid-template-columns:1fr; } }
+    @media (max-width:380px) { .metric strong { font-size:19px; } .metric { padding:16px 10px; } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { transition:none!important; scroll-behavior:auto!important; } }
+    @media print {
+      body { background:#fff; }
+      .wrap { width:100%; }
+      .topbar { padding-top:5px; }
+      .hero { padding:22px 0; grid-template-columns:1fr 1fr; }
+      h1 { font-size:48px; }
+      .hero-card { min-height:auto; padding:23px; box-shadow:none; }
+      .hero-card-bottom,.hero-card::after { display:none; }
+      .metric-strip { margin-bottom:15px; }
+      .panel { box-shadow:none; border-radius:0; }
+      .toolbar,.afterword,.site-footer,.panel-bottom,.detail-row,.minibar,.chevron { display:none!important; }
+      .payment-section { display:block; background:#fff; color:#000; padding:12px 0; box-shadow:none; }
+      .payment-intro h2, .bank-field, .bank-field strong { color:#000; }
+      .bank-grid { grid-template-columns:repeat(4,1fr); }
+      .bank-copy, .payment-copy-all { display:none!important; }
+      .panel-head { padding:15px 0; }
+      th,td { padding:10px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">M</div>
+        <div><div class="brand-name">The Magdalen Arms</div><div class="brand-sub">Our table · Oxford</div></div>
+      </div>
+      <div class="top-note">Table 9 &nbsp;·&nbsp; 13 guests</div>
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="kicker">Saturday night, settled</div>
+        <h1>Our dinner, <br><em>divided.</em></h1>
+        <p class="lead">One lovely meal, thirteen people, and a fair share for everyone. Find your name to see your total and exactly how we split each dish. The aioli is shown on the receipt but excluded from what anyone owes.</p>
+      </div>
+      <div class="hero-card" aria-label="Total receipt and occasion">
+        <div class="total-label">The whole table · rounded</div>
+        <div class="total-money" id="hero-total">£427.50</div>
+        <small>Includes 12.5% service · original receipt £427.39</small>
+        <div class="hero-card-bottom">
+          <div class="when"><span>THE OCCASION</span>7 November 2026<br>Oxford, England</div>
+          <div class="round-mark" aria-hidden="true">13</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="metric-strip" aria-label="Bill at a glance">
+      <div class="metric"><strong id="guest-count">13</strong><span>People at dinner</span></div>
+      <div class="metric"><strong id="food-total">£380</strong><span>Food &amp; drinks</span></div>
+      <div class="metric"><strong id="service-total">£47.50</strong><span>Service charge</span></div>
+    </section>
+
+    <main class="panel" id="bill-panel">
+      <div class="panel-head">
+        <div><div class="panel-eyebrow">The ledger</div><h2>Who owes what</h2></div>
+        <p class="panel-description">Every amount is shown to the nearest 50p. Tap a person or dish for the full breakdown.</p>
+      </div>
+      <div class="toolbar">
+        <div class="tabs" role="tablist" aria-label="Choose bill view">
+          <button id="people-tab" class="tab" type="button" role="tab" aria-controls="people-view" aria-selected="true">By person</button>
+          <button id="dishes-tab" class="tab" type="button" role="tab" aria-controls="dishes-view" aria-selected="false">By dish</button>
+        </div>
+        <div class="controls">
+          <label class="search-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input id="search" class="search" type="search" aria-label="Search names or dishes" placeholder="Search names or dishes…" autocomplete="off">
+          </label>
+          <label>
+            <span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Sort entries</span>
+            <select id="sort" class="sort" aria-label="Sort entries">
+              <option value="default">Original order</option>
+              <option value="high">Highest amount</option>
+              <option value="low">Lowest amount</option>
+              <option value="az">A to Z</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div id="people-view" role="tabpanel" aria-labelledby="people-tab">
+        <div class="table-wrap"><table aria-label="Individual dinner totals including service">
+          <thead><tr><th scope="col">Person</th><th scope="col" class="right th-food">Food &amp; drinks</th><th scope="col" class="right th-service">Service</th><th scope="col" class="right">Total owed</th></tr></thead>
+          <tbody id="people-rows"></tbody>
+        </table></div>
+      </div>
+      <div id="dishes-view" role="tabpanel" aria-labelledby="dishes-tab" hidden>
+        <div class="table-wrap"><table aria-label="Menu items and people who shared them">
+          <thead><tr><th scope="col">Item</th><th scope="col" class="th-assignees">Shared between</th><th scope="col" class="right">Line price</th></tr></thead>
+          <tbody id="dish-rows"></tbody>
+        </table></div>
+      </div>
+      <div class="panel-bottom">
+        <div id="result-count" class="muted" aria-live="polite">13 people</div>
+        <button class="text-btn" type="button" id="copy-all">Copy everyone's totals ↗</button>
+      </div>
+    </main>
+
+
+    <section class="payment-section" id="pay" aria-labelledby="pay-heading">
+      <div class="payment-intro">
+        <div class="panel-eyebrow">Time to settle up</div>
+        <h2 id="pay-heading">Bank transfer</h2>
+        <p>Send your rounded total by bank transfer to En Hua. Please use your name as the payment reference so it's easy to match up.</p>
+        <button class="small-button payment-copy-all" type="button" id="copy-bank-all">Copy all bank details <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="bank-grid" aria-label="Bank transfer details">
+        <div class="bank-field"><div><span class="bank-label">Account holder</span><strong>En Hua Hu</strong></div><button type="button" class="bank-copy" data-copy-bank="En Hua Hu" aria-label="Copy account holder En Hua Hu">Copy</button></div>
+        <div class="bank-field"><div><span class="bank-label">Bank</span><strong>HSBC UK</strong></div><button type="button" class="bank-copy" data-copy-bank="HSBC UK" aria-label="Copy bank HSBC UK">Copy</button></div>
+        <div class="bank-field"><div><span class="bank-label">Sort code</span><strong class="bank-number">40-35-34</strong></div><button type="button" class="bank-copy" data-copy-bank="40-35-34" aria-label="Copy sort code 40-35-34">Copy</button></div>
+        <div class="bank-field"><div><span class="bank-label">Account number</span><strong class="bank-number">64433874</strong></div><button type="button" class="bank-copy" data-copy-bank="64433874" aria-label="Copy account number 64433874">Copy</button></div>
+      </div>
+    </section>
+
+    <section class="afterword" aria-label="How the split works">
+      <div class="note-card dark">
+        <h3>Shared at the table</h3>
+        <p>The Primitivo wine is shared 40% by En Hua, 40% by Said and 20% by Sebastian. One venison pie and the £48 chicken are shared by En Hua, Jolien, Stefan, Nora and Said; the other pie is shared by Jordan, Sebastian and Elena.</p>
+        <p>Water is split between all 13. STP and pumpkin pie are split between everyone except Stefan and Nora. The aioli on the receipt is deliberately excluded from the split.</p>
+      </div>
+      <div class="note-card">
+        <h3>A note on rounding</h3>
+        <p>Individual totals are calculated from the receipt and rounded to the nearest 50p. Separate rounded lines may not add up perfectly—that's intentional. The original bill was <strong>£427.39</strong>, including <strong>£47.49</strong> service.</p>
+        <p>The <strong>£1.50 aioli</strong> (and its share of service charge) are excluded from what anyone owes, at the group's request.</p>
+        <p>The receipt records one £14.80 mussels charge, shared here between Jordan (half) and Elena and Sebastian (a quarter each), following our agreed split.</p>
+      </div>
+    </section>
+
+    <section class="receipt-proof" aria-label="Original receipt">
+      <div class="note-card">
+        <div class="receipt-grid">
+          <div class="receipt-copy">
+            <div class="panel-eyebrow">The evidence</div>
+            <h3>The original receipt</h3>
+            <p>Here is the original itemised receipt from The Magdalen Arms as proof. All the allocations above are based on this receipt and the group's agreed sharing arrangements.</p>
+            <p>The original total includes the aioli, which we have left out of the individual amounts above.</p>
+            <p class="caption">Table 9 · 7 November 2026 · Oxford</p>
+          </div>
+          <div>
+            <a href="receipt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size photograph of the original receipt in a new tab"><img class="receipt-shot" src="receipt.jpg" width="1056" height="1408" loading="lazy" alt="Photograph of the original Magdalen Arms receipt for £427.39, with all itemised charges and service fee."></a>
+            <div class="caption">Click the receipt to open the full image.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer"><span>Made for our table at The Magdalen Arms · 7 November 2026</span><span>Just a static page. No logins, tracking or external dependencies.</span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="application/json" id="bill-data">{"restaurant":"The Magdalen Arms","address":"243 Iffley Road, Oxford","date":"Saturday, 7 November 2026","receiptTotal":427.39,"receiptFood":379.9,"receiptService":47.49,"serviceRate":0.125,"people":[{"name":"En Hua","food":39.31,"service":4.9025,"total":44.2125,"note":"40% of £35 wine; group 1 pie / £48 chicken; desserts; water. Penny reconciliation applied here.","order":0,"sharedWater":true,"sharedDessert":true},{"name":"Jolien","food":27.29,"service":3.4125,"total":30.7025,"note":"1 tea; group 1 pie / £48 chicken; desserts; water","order":1,"sharedWater":true,"sharedDessert":true},{"name":"Stefan","food":22.09,"service":2.7625,"total":24.8525,"note":"Group 1 pie / £48 chicken; water; no communal dessert","order":2,"sharedWater":true,"sharedDessert":false},{"name":"Nora","food":22.09,"service":2.7625,"total":24.8525,"note":"Group 1 pie / £48 chicken; water; no communal dessert","order":3,"sharedWater":true,"sharedDessert":false,"nameNote":"(sorry if mispelt)"},{"name":"Said","food":39.29,"service":4.9125,"total":44.2025,"note":"40% of £35 wine; group 1 pie / £48 chicken; desserts; water","order":4,"sharedWater":true,"sharedDessert":true},{"name":"Megan","food":22.49,"service":2.81,"total":25.3,"note":"1 tea; fish soup and salad (user belief); desserts; water","order":5,"sharedWater":true,"sharedDessert":true},{"name":"Teresa","food":33.69,"service":4.21,"total":37.9,"note":"Onglet £29.80 (confirmed); no mussels; desserts; water","order":6,"sharedWater":true,"sharedDessert":true},{"name":"Jin","food":27.89,"service":3.49,"total":31.38,"note":"Duck leg £22 (confirmed); 1 tea (Jing assumed same as Jin); desserts; water","order":7,"sharedWater":true,"sharedDessert":true},{"name":"Kasimir","food":25.89,"service":3.24,"total":29.13,"note":"1 bream fillet £22 (user belief); desserts; water","order":8,"sharedWater":true,"sharedDessert":true},{"name":"Sebastian","food":34.26,"service":4.28,"total":38.54,"note":"20% of £35 wine; ¼ of billed mussels charge; ⅓ of second venison pie; desserts; water","order":9,"sharedWater":true,"sharedDessert":true},{"name":"Elena","food":27.26,"service":3.41,"total":30.67,"note":"¼ of billed mussels charge; ⅓ of second venison pie (user belief); desserts; water","order":10,"sharedWater":true,"sharedDessert":true},{"name":"Ana","food":25.89,"service":3.24,"total":29.13,"note":"1 bream fillet £22 (user belief); desserts; water","order":11,"sharedWater":true,"sharedDessert":true},{"name":"Jordan","food":30.96,"service":3.87,"total":34.83,"note":"½ of billed mussels charge (one reported portion); ⅓ of second venison pie (user belief); desserts; water","order":12,"sharedWater":true,"sharedDessert":true}],"items":[{"id":0,"name":"Sparkling water","receiptName":"Sparkling Water BTL","category":"Drink","quantity":2,"price":9.0,"unitPrice":4.5,"evidence":"Assistant assumption","interpretation":"Shared evenly across 13","comment":"Receipt: (2 × £4.50)","shares":[{"name":"En Hua","fraction":0.076923076923},{"name":"Jolien","fraction":0.076923076923},{"name":"Stefan","fraction":0.076923076923},{"name":"Nora","fraction":0.076923076923},{"name":"Said","fraction":0.076923076923},{"name":"Megan","fraction":0.076923076923},{"name":"Teresa","fraction":0.076923076923},{"name":"Jin","fraction":0.076923076923},{"name":"Kasimir","fraction":0.076923076923},{"name":"Sebastian","fraction":0.076923076923},{"name":"Elena","fraction":0.076923076923},{"name":"Ana","fraction":0.076923076923},{"name":"Jordan","fraction":0.076923076923}]},{"id":1,"name":"Breakfast tea","receiptName":"MUG of Breakfast Tea","category":"Drink","quantity":3,"price":6.0,"unitPrice":2.0,"evidence":"Confirmed†","interpretation":"Megan / Jolien / Jing (= Jin?)","comment":"Receipt: (3 × £2.00); Megan, Jolien, Jing/Jin","shares":[{"name":"Jolien","fraction":0.333333333333},{"name":"Megan","fraction":0.333333333333},{"name":"Jin","fraction":0.333333333333}]},{"id":2,"name":"Primitivo wine","receiptName":"Bottle Primitivo","category":"Wine","quantity":1,"price":35.0,"unitPrice":35.0,"evidence":"User confirmed","interpretation":"En Hua 40% / Said 40% / Sebastian 20%","comment":"One £35 bottle: En Hua £14 (40%), Said £14 (40%), Sebastian £7 (20%), before service.","shares":[{"name":"En Hua","fraction":0.4},{"name":"Said","fraction":0.4},{"name":"Sebastian","fraction":0.2}]},{"id":3,"name":"Mussels","receiptName":"Mussels","category":"Starter","quantity":1,"price":14.8,"unitPrice":14.8,"evidence":"User-confirmed sharing","interpretation":"1 portion Jordan; 1 portion split Elena + Sebastian","comment":"One £14.80 line (qty 1) printed; user recalls 2 portions: Jordan 1; Elena and Sebastian share 1. Only billed amount is split.","shares":[{"name":"Sebastian","fraction":0.25},{"name":"Elena","fraction":0.25},{"name":"Jordan","fraction":0.5}]},{"id":4,"name":"Fish soup","receiptName":"Fish soup","category":"Starter","quantity":1,"price":9.8,"unitPrice":9.8,"evidence":"User belief","interpretation":"Megan","comment":"Megan (tentative from user)","shares":[{"name":"Megan","fraction":1.0}]},{"id":5,"name":"Side salad","receiptName":"Side salad","category":"Side","quantity":1,"price":6.8,"unitPrice":6.8,"evidence":"User belief","interpretation":"Megan","comment":"Megan (tentative from user)","shares":[{"name":"Megan","fraction":1.0}]},{"id":6,"name":"Onglet steak","receiptName":"Onglet SOLO","category":"Main","quantity":1,"price":29.8,"unitPrice":29.8,"evidence":"Confirmed","interpretation":"Teresa","comment":"Onglet assigned to Teresa (Melissa was the same person)","shares":[{"name":"Teresa","fraction":1.0}]},{"id":7,"name":"Duck leg","receiptName":"Duck leg","category":"Main","quantity":1,"price":22.0,"unitPrice":22.0,"evidence":"Confirmed","interpretation":"Jin","comment":"Jin (confirmed; possibly called Jing in tea assignment)","shares":[{"name":"Jin","fraction":1.0}]},{"id":8,"name":"Bream fillets","receiptName":"Bream filet","category":"Main","quantity":2,"price":44.0,"unitPrice":22.0,"evidence":"User belief","interpretation":"Ana + Kasimir","comment":"2 × £22; Ana and Kasimir provisionally","shares":[{"name":"Kasimir","fraction":0.5},{"name":"Ana","fraction":0.5}]},{"id":9,"name":"Venison pie · group 1","receiptName":"Steak n VENNY pie — group 1","category":"Sharing main","quantity":1,"price":59.0,"unitPrice":59.0,"evidence":"Explicit","interpretation":"En Hua / Jolien / Stefan / Nora / Said","comment":"Part 1 of original 2 × £59 line; first group of five","shares":[{"name":"En Hua","fraction":0.2},{"name":"Jolien","fraction":0.2},{"name":"Stefan","fraction":0.2},{"name":"Nora","fraction":0.2},{"name":"Said","fraction":0.2}]},{"id":10,"name":"Venison pie · group 2","receiptName":"Steak n VENNY pie — group 2","category":"Sharing main","quantity":1,"price":59.0,"unitPrice":59.0,"evidence":"User belief","interpretation":"Jordan / Sebastian / Elena","comment":"Part 2 of original 2 × £59 line; second group of three","shares":[{"name":"Sebastian","fraction":0.333333333333},{"name":"Elena","fraction":0.333333333333},{"name":"Jordan","fraction":0.333333333333}]},{"id":11,"name":"Chicken","receiptName":"Item Open Main","category":"Sharing main","quantity":1,"price":48.0,"unitPrice":48.0,"evidence":"User confirmed","interpretation":"En Hua / Jolien / Stefan / Nora / Said","comment":"Chicken (£48), shared by En Hua, Jolien, Stefan, Nora and Said; the original receipt calls it “Item Open Main”.","shares":[{"name":"En Hua","fraction":0.2},{"name":"Jolien","fraction":0.2},{"name":"Stefan","fraction":0.2},{"name":"Nora","fraction":0.2},{"name":"Said","fraction":0.2}]},{"id":13,"name":"STP","receiptName":"STP","category":"Dessert","quantity":3,"price":26.4,"unitPrice":8.8,"evidence":"User split rule","interpretation":"Everyone except Stefan + Nora","comment":"3 × £8.80 STP; may mean sticky toffee pudding; verify","shares":[{"name":"En Hua","fraction":0.090909090909},{"name":"Jolien","fraction":0.090909090909},{"name":"Said","fraction":0.090909090909},{"name":"Megan","fraction":0.090909090909},{"name":"Teresa","fraction":0.090909090909},{"name":"Jin","fraction":0.090909090909},{"name":"Kasimir","fraction":0.090909090909},{"name":"Sebastian","fraction":0.090909090909},{"name":"Elena","fraction":0.090909090909},{"name":"Ana","fraction":0.090909090909},{"name":"Jordan","fraction":0.090909090909}]},{"id":14,"name":"Pumpkin pie","receiptName":"Pumpkin pie","category":"Dessert","quantity":1,"price":8.8,"unitPrice":8.8,"evidence":"User split rule","interpretation":"Everyone except Stefan + Nora","comment":"Communal dessert; excludes Stefan and Nora","shares":[{"name":"En Hua","fraction":0.090909090909},{"name":"Jolien","fraction":0.090909090909},{"name":"Said","fraction":0.090909090909},{"name":"Megan","fraction":0.090909090909},{"name":"Teresa","fraction":0.090909090909},{"name":"Jin","fraction":0.090909090909},{"name":"Kasimir","fraction":0.090909090909},{"name":"Sebastian","fraction":0.090909090909},{"name":"Elena","fraction":0.090909090909},{"name":"Ana","fraction":0.090909090909},{"name":"Jordan","fraction":0.090909090909}]}]}</script>
+  <script>
+    'use strict';
+    const bill = JSON.parse(document.getElementById('bill-data').textContent);
+    const state = { view: 'people', search: '', sort: 'default', person: null, item: null };
+    const personBody = document.getElementById('people-rows');
+    const dishBody = document.getElementById('dish-rows');
+    const countEl = document.getElementById('result-count');
+    const searchEl = document.getElementById('search');
+    const sortEl = document.getElementById('sort');
+    const peopleTab = document.getElementById('people-tab');
+    const dishesTab = document.getElementById('dishes-tab');
+    const maxTotal = Math.max(...bill.people.map(p => p.total));
+
+    function money(n) {
+      const rounded = Math.round((Number(n) + Number.EPSILON) * 2) / 2;
+      return '£' + rounded.toLocaleString('en-GB', {
+        minimumFractionDigits: Number.isInteger(rounded) ? 0 : 2,
+        maximumFractionDigits: 2
+      });
+    }
+    function e(str) {
+      return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+    function slug(str) {
+      return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    }
+    function shareLabel(n) {
+      const denominators = [2,3,4,5,11,13];
+      if (Math.abs(n-1)<1e-6) return 'Full charge';
+      for (const d of denominators) if (Math.abs(n-(1/d))<1e-6) return '1/' + d + ' share';
+      return Math.round(n*100) + '% share';
+    }
+    function displayName(name) {
+      const person = bill.people.find(p=>p.name===name);
+      return name + (person?.nameNote ? ' ' + person.nameNote : '');
+    }
+    function personItems(name) {
+      return bill.items.filter(i=>i.shares.some(s=>s.name===name)).map(i=>({
+        ...i, share:i.shares.find(s=>s.name===name).fraction
+      }));
+    }
+    function sorted(arr, amountKey) {
+      const out = [...arr];
+      if (state.sort==='high') out.sort((a,b)=>b[amountKey]-a[amountKey]);
+      else if (state.sort==='low') out.sort((a,b)=>a[amountKey]-b[amountKey]);
+      else if (state.sort==='az') out.sort((a,b)=>a.name.localeCompare(b.name));
+      else out.sort((a,b)=> (a.order??a.id)-(b.order??b.id));
+      return out;
+    }
+    function setHash(name) {
+      try {
+        const base=location.href.split('#')[0];
+        history.replaceState(null,'',name?base+'#'+slug(name):base);
+      } catch (_) { /* preview contexts may disallow history changes */ }
+    }
+    function personDetail(person) {
+      const rows = personItems(person.name).map(item=>`
+        <div class="detail-line">
+          <div><div class="detail-name">${e(item.name)}</div><div class="detail-sub">${shareLabel(item.share)} · ${e(item.quantity===1?'1 charged':item.quantity+' charged')} on the receipt</div></div>
+          <div class="detail-value">${money(item.price * item.share)}</div>
+        </div>`).join('');
+      return `<tr class="detail-row"><td colspan="4">
+        <section class="detail-inner" aria-label="Items assigned to ${e(displayName(person.name))}">
+          <div class="detail-titlebar"><div><h3>${e(displayName(person.name))}'s bill</h3><p>${personItems(person.name).length} shared or individual items, including drinks</p></div>
+            <div class="detail-actions"><button class="small-button" type="button" data-copy-person="${e(person.name)}" aria-label="Copy ${e(displayName(person.name))}'s total">Copy total <span aria-hidden="true">↗</span></button><button class="small-button" type="button" data-copy-transfer="${e(person.name)}" aria-label="Copy bank transfer details and amount for ${e(displayName(person.name))}">Copy payment info <span aria-hidden="true">↗</span></button></div>
+          </div>
+          <div class="detail-list">${rows}</div>
+          <div class="detail-footer"><div class="service-label">Service (12.5%)</div><div class="detail-value">${money(person.service)}</div>
+            <div class="due-label">Total to pay</div><div class="due-number">${money(person.total)}</div>
+          </div>
+        </section>
+      </td></tr>`;
+    }
+    function peopleRender() {
+      const q=state.search.trim().toLowerCase();
+      const matching = sorted(bill.people.filter(p=>displayName(p.name).toLowerCase().includes(q)||personItems(p.name).some(i=>i.name.toLowerCase().includes(q))), 'total');
+      countEl.textContent=matching.length+' of '+bill.people.length+' people';
+      if (!matching.length) {
+        personBody.innerHTML='<tr><td colspan="4"><div class="table-empty">No matching people or dishes. Try another search.</div></td></tr>';
+        return;
+      }
+      personBody.innerHTML=matching.map(person=> {
+        const active = state.person===person.name;
+        const entries=personItems(person.name).length;
+        return `<tr class="person-row ${active?'open':''}">
+          <td><button class="person-button" type="button" data-person="${e(person.name)}" aria-expanded="${active}" title="Show ${e(displayName(person.name))}'s bill">
+            <span class="avatar" aria-hidden="true">${e(person.name.charAt(0))}</span>
+            <span><span class="person-primary">${e(person.name)}${person.nameNote?` <span class="person-name-note">${e(person.nameNote)}</span>`:''}</span><span class="person-secondary">${entries} item${entries!==1?'s':''} · view breakdown</span></span>
+          </button></td>
+          <td class="right td-food amount">${money(person.food)}</td>
+          <td class="right td-service amount">${money(person.service)}</td>
+          <td class="right"><div class="total-wrap"><span class="minibar" aria-hidden="true"><span style="width:${Math.round(person.total/maxTotal*100)}%"></span></span><strong class="main-money amount">${money(person.total)}</strong>
+            <svg class="chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div></td>
+        </tr>${active?personDetail(person):''}`;
+      }).join('');
+    }
+    function itemDetail(item) {
+      const parts=item.shares.map(part=>`<div class="detail-line"><div><div class="detail-name">${e(displayName(part.name))}</div><div class="detail-sub">${shareLabel(part.fraction)}</div></div><div class="detail-value">${money(item.price*part.fraction)}</div></div>`).join('');
+      return `<tr class="detail-row"><td colspan="3"><section class="detail-inner" aria-label="People assigned to ${e(item.name)}">
+        <div class="detail-titlebar"><div><h3>${e(item.name)}</h3><p>${e(item.receiptName)} · ${e(item.quantity)} × ${money(item.unitPrice)} (rounded)</p></div></div>
+        <div class="detail-list">${parts}</div>
+        <div class="detail-footer"><div class="due-label">Receipt line, rounded</div><div class="due-number">${money(item.price)}</div></div>
+      </section></td></tr>`;
+    }
+    function dishRender() {
+      const q=state.search.trim().toLowerCase();
+      const matching = sorted(bill.items.filter(i=>i.name.toLowerCase().includes(q)||i.shares.some(s=>displayName(s.name).toLowerCase().includes(q))), 'price');
+      countEl.textContent=matching.length+' of '+bill.items.length+' charged items';
+      if (!matching.length) {
+        dishBody.innerHTML='<tr><td colspan="3"><div class="table-empty">No matching dishes or names. Try another search.</div></td></tr>';
+        return;
+      }
+      dishBody.innerHTML=matching.map(item=> {
+        const active=state.item===item.id;
+        const names=item.shares.map(s=>s.name);
+        const group=names.length===13?'Everyone (13)':names.length===11?'11 people (not Stefan & Nora)':names.map(displayName).join(' · ');
+        return `<tr class="dish-row ${active?'open':''}">
+          <td><button class="dish-button" type="button" data-item="${item.id}" aria-expanded="${active}">
+            <span><span class="dish-name">${e(item.name)}</span><span class="dish-detail">${item.quantity===1?'Single line':item.quantity+' charged'} · ${e(item.category)}</span></span>
+          </button></td>
+          <td class="dish-assignees">${e(group)}</td>
+          <td class="right"><div class="total-wrap"><strong class="dish-total amount">${money(item.price)}</strong>
+            <svg class="chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div></td>
+        </tr>${active?itemDetail(item):''}`;
+      }).join('');
+    }
+    function render() {
+      if(state.view==='people') peopleRender();
+      else dishRender();
+    }
+    function setView(view) {
+      state.view=view;
+      peopleTab.setAttribute('aria-selected',String(view==='people'));
+      dishesTab.setAttribute('aria-selected',String(view==='dishes'));
+      document.getElementById('people-view').hidden=view!=='people';
+      document.getElementById('dishes-view').hidden=view!=='dishes';
+      sortEl.options[0].text=view==='people'?'Original order':'Receipt order';
+      render();
+    }
+    function textForPerson(person) {
+      return displayName(person.name)+' — '+money(person.total)+' (including service)';
+    }
+    let toastTimer;
+    function toast(message) {
+      const box=document.getElementById('toast');
+      box.textContent=message;
+      box.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer=setTimeout(()=>box.classList.remove('show'),2300);
+    }
+    async function copyText(text) {
+      try {
+        if(navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text);
+        else {
+          const area=document.createElement('textarea');
+          area.value=text; area.style.position='fixed'; area.style.opacity='0';
+          document.body.appendChild(area);area.select();
+          if(!document.execCommand('copy')) throw Error('Copy not supported');
+          area.remove();
+        }
+        toast('Copied to clipboard');
+      } catch(e) { toast('Copy unavailable. Please select the text instead.'); }
+    }
+    const bankInfo = { holder: 'En Hua Hu', bank: 'HSBC UK', sortCode: '40-35-34', account: '64433874' };
+    function bankText(person) {
+      const lines = ['Payee: ' + bankInfo.holder, 'Bank: ' + bankInfo.bank, 'Sort code: ' + bankInfo.sortCode, 'Account number: ' + bankInfo.account];
+      if (person) {
+        lines.push('Amount: ' + money(person.total));
+        lines.push('Reference: ' + person.name + ' dinner');
+      } else lines.push('Reference: Your name + dinner');
+      return lines.join('\n');
+    }
+    document.getElementById('copy-bank-all').addEventListener('click', () => copyText(bankText(null)));
+    document.getElementById('pay').addEventListener('click', ev => {
+      const button = ev.target.closest('[data-copy-bank]');
+      if (button) copyText(button.dataset.copyBank);
+    });
+    peopleTab.addEventListener('click',()=>setView('people'));
+    dishesTab.addEventListener('click',()=>setView('dishes'));
+    searchEl.addEventListener('input',ev=>{state.search=ev.target.value;render();});
+    sortEl.addEventListener('change',ev=>{state.sort=ev.target.value;render();});
+    personBody.addEventListener('click',ev=>{
+      const transfer=ev.target.closest('[data-copy-transfer]');
+      if(transfer) {const p=bill.people.find(p=>p.name===transfer.dataset.copyTransfer); if(p) copyText(bankText(p)); return;}
+      const copy=ev.target.closest('[data-copy-person]');
+      if(copy) {const p=bill.people.find(p=>p.name===copy.dataset.copyPerson); if(p) copyText(textForPerson(p)); return;}
+      const btn=ev.target.closest('[data-person]');
+      if(!btn)return;
+      state.person=state.person===btn.dataset.person?null:btn.dataset.person;
+      setHash(state.person);render();
+    });
+    dishBody.addEventListener('click',ev=>{
+      const btn=ev.target.closest('[data-item]');
+      if(!btn)return;
+      const id=Number(btn.dataset.item);
+      state.item=state.item===id?null:id; render();
+    });
+    document.getElementById('copy-all').addEventListener('click',()=>{
+      const lines=['The Magdalen Arms · 7 November 2026','Dinner split (rounded to nearest 50p)',''];
+      for(const p of bill.people) lines.push(textForPerson(p));
+      lines.push('','Receipt: £427.39 incl. service. Aioli excluded from split. Individual shares rounded independently.');
+      copyText(lines.join('\n'));
+    });
+    document.getElementById('hero-total').textContent=money(bill.receiptTotal);
+    document.getElementById('food-total').textContent=money(bill.receiptFood);
+    document.getElementById('service-total').textContent=money(bill.receiptService);
+    document.getElementById('guest-count').textContent=bill.people.length;
+    const hash=decodeURIComponent(location.hash.slice(1));
+    const selected=bill.people.find(p=>slug(p.name)===hash);
+    if(selected)state.person=selected.name;
+    setView('people');
+  </script>
+</body>
+</html>
