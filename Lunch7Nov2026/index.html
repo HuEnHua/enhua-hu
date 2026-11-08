@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#23483c">
-  <meta name="description" content="A beautifully simple, itemized split of our Magdalen Arms dinner on 7 November 2026.">
-  <title>Our dinner split · The Magdalen Arms</title>
+  <meta name="description" content="A beautifully simple, itemized split of our Magdalen Arms lunch on 7 November 2026.">
+  <title>Our lunch split · The Magdalen Arms</title>
   <style>
     :root {
       color-scheme: light;
@@ -269,7 +269,7 @@
     <header class="hero">
       <div>
         <div class="kicker">Saturday night, settled</div>
-        <h1>Our dinner, <br><em>divided.</em></h1>
+        <h1>Our lunch, <br><em>divided.</em></h1>
         <p class="lead">One lovely meal, thirteen people, and a fair share for everyone. Find your name to see your total and exactly how we split each dish. The aioli is shown on the receipt but excluded from what anyone owes.</p>
       </div>
       <div class="hero-card" aria-label="Total receipt and occasion">
@@ -284,7 +284,7 @@
     </header>
 
     <section class="metric-strip" aria-label="Bill at a glance">
-      <div class="metric"><strong id="guest-count">13</strong><span>People at dinner</span></div>
+      <div class="metric"><strong id="guest-count">13</strong><span>People at lunch</span></div>
       <div class="metric"><strong id="food-total">£380</strong><span>Food &amp; drinks</span></div>
       <div class="metric"><strong id="service-total">£47.50</strong><span>Service charge</span></div>
     </section>
@@ -317,7 +317,7 @@
       </div>
 
       <div id="people-view" role="tabpanel" aria-labelledby="people-tab">
-        <div class="table-wrap"><table aria-label="Individual dinner totals including service">
+        <div class="table-wrap"><table aria-label="Individual lunch totals including service">
           <thead><tr><th scope="col">Person</th><th scope="col" class="right th-food">Food &amp; drinks</th><th scope="col" class="right th-service">Service</th><th scope="col" class="right">Total owed</th></tr></thead>
           <tbody id="people-rows"></tbody>
         </table></div>
@@ -553,8 +553,8 @@
       const lines = ['Payee: ' + bankInfo.holder, 'Bank: ' + bankInfo.bank, 'Sort code: ' + bankInfo.sortCode, 'Account number: ' + bankInfo.account];
       if (person) {
         lines.push('Amount: ' + money(person.total));
-        lines.push('Reference: ' + person.name + ' dinner');
-      } else lines.push('Reference: Your name + dinner');
+        lines.push('Reference: ' + person.name + ' lunch');
+      } else lines.push('Reference: Your name + lunch');
       return lines.join('\n');
     }
     document.getElementById('copy-bank-all').addEventListener('click', () => copyText(bankText(null)));
@@ -583,7 +583,7 @@
       state.item=state.item===id?null:id; render();
     });
     document.getElementById('copy-all').addEventListener('click',()=>{
-      const lines=['The Magdalen Arms · 7 November 2026','Dinner split (rounded to nearest 50p)',''];
+      const lines=['The Magdalen Arms · 7 November 2026','lunch split (rounded to nearest 50p)',''];
       for(const p of bill.people) lines.push(textForPerson(p));
       lines.push('','Receipt: £427.39 incl. service. Aioli excluded from split. Individual shares rounded independently.');
       copyText(lines.join('\n'));
